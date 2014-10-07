@@ -1,4 +1,4 @@
-package metaxa;
+package metaxa.comparators;
 
 import java.util.Comparator;
 

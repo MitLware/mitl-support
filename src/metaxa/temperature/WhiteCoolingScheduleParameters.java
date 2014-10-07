@@ -1,4 +1,4 @@
-package metaxa;
+package metaxa.temperature;
 
 import jeep.math.ClosedInterval;
 

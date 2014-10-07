@@ -1,4 +1,4 @@
-package metaxa;
+package metaxa.comparators;
 
 public final class NotComparableAtSignificanceLevel
 extends RuntimeException

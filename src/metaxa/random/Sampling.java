@@ -1,4 +1,4 @@
-package metaxa;
+package metaxa.random;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -16,18 +16,18 @@ import java.util.Set;
 
 //////////////////////////////////////////////////////////////////////
 
-public final class RandomSamplingUtil {
+public final class Sampling {
 
 	/**
 	 * Assuming  that the collection to take the sample from is random access, 
 	 * we can repeatedly add random items from the collection to 
 	 * our result set, until the set contains m different items. 
-	 * As an optimization, when m > n/2, we can choose (n-m) items 
+	 * As an optimisation, when m > n/2, we can choose (n-m) items 
 	 * instead of m, and then return the rest.
 	 * The expected time complexity is linear in m, 
 	 * which is optimal. This is a little surprising, given the 
 	 * naive nature of the algorithm, and it results from the above 
-	 * optimization.
+	 * optimisation.
 	 */
 			
 	public static <T> Set<T> randomSample1(List<T> items, int m, Random rnd ){
@@ -150,7 +150,7 @@ public final class RandomSamplingUtil {
 	 */
 	
 	public static <T> List<T> 
-	reservoirSample( Iterator<T> it, int m, Random rnd ){   
+	reservoirSample( Iterator<T> it, int m, Random rnd ) {   
 	    ArrayList<T> res = new ArrayList<T>(m);   
 	    int count = 0;
 	    while( it.hasNext() )
@@ -215,7 +215,7 @@ public final class RandomSamplingUtil {
 		final int numIndices = 5;
 		for( int i=0; i<1000; ++i )
 		{
-			BitSet b = RandomSamplingUtil.randomSubset( numItems, numIndices, random );
+			BitSet b = Sampling.randomSubset( numItems, numIndices, random );
 			System.out.println( b );
 		}
 	}

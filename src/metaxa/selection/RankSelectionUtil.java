@@ -1,4 +1,4 @@
-package metaxa;
+package metaxa.selection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
