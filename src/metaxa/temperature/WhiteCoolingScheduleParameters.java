@@ -20,7 +20,7 @@ import org.apache.commons.math3.stat.StatUtils;
 
 public final class WhiteCoolingScheduleParameters {
 	
-	public static ClosedInterval.Double 
+	public static ClosedInterval
 	WhiteTemperatureRangeForSA( double [] fitnessTrajectory )
 	{
 		Double minDifference = null;
@@ -33,7 +33,7 @@ public final class WhiteCoolingScheduleParameters {
 		}
 
 		final double variance = StatUtils.variance( fitnessTrajectory );
-		return new ClosedInterval.Double( 
+		return ClosedInterval.create( 
 				minDifference, 
 				Math.sqrt( variance ) );		
 	}
