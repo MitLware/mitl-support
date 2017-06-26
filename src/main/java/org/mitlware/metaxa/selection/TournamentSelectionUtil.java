@@ -1,4 +1,4 @@
-package metaxa.selection;
+package org.mitlware.metaxa.selection;
 
 import java.util.ArrayList;
 import java.util.List;

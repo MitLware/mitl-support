@@ -1,4 +1,4 @@
-package metaxa;
+package org.mitlware.metaxa;
 
 import java.util.Random;
 

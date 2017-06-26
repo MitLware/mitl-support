@@ -1,4 +1,4 @@
-package metaxa.random;
+package org.mitlware.metaxa.random;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -109,8 +109,8 @@ public final class Sampling {
 	
 	/**
 	 * If we have a read-only random-access collection, but 
-	 * we don’t want the time complexity to be dependent on N, 
-  	 * we can use Floyd’s algorithm. It iterates with variable 
+	 * we donï¿½t want the time complexity to be dependent on N, 
+  	 * we can use Floydï¿½s algorithm. It iterates with variable 
   	 * i through the last m indexes of the collection, 
   	 * and on each iteration adds a single item from 
   	 * the range 0..i, with a non-uniform distribution
@@ -137,7 +137,7 @@ public final class Sampling {
 	
 
 	/**
-	 * Sometimes we don’t know the collection size in advance. 
+	 * Sometimes we donï¿½t know the collection size in advance. 
 	 * We can only iterate through it, as if it was a data stream 
 	 * with unknown size. The following algorithm (known as 
 	 * Reservoir sampling) performs only one pass on the input 

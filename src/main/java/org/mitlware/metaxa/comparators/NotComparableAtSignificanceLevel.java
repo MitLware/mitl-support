@@ -1,4 +1,4 @@
-package metaxa.comparators;
+package org.mitlware.metaxa.comparators;
 
 public final class NotComparableAtSignificanceLevel
 extends RuntimeException

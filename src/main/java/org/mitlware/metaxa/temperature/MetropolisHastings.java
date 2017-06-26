@@ -1,4 +1,4 @@
-package metaxa.temperature;
+package org.mitlware.metaxa.temperature;
 
 import java.util.Random;
 

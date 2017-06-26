@@ -1,4 +1,4 @@
-package metaxa.random;
+package org.mitlware.metaxa.random;
 //package net.goui.util;
 
 /*
