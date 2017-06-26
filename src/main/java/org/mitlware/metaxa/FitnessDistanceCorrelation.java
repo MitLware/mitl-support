@@ -18,7 +18,7 @@
 
 //////////////////////////////////////////////////////////////////////
 
-package mitlware.metaxa;
+package org.mitlware.metaxa;
 
 import java.util.List;
 
