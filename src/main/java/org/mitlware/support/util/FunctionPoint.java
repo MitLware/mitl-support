@@ -1,4 +1,4 @@
-package org.mitlware.support;
+package org.mitlware.support.util;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

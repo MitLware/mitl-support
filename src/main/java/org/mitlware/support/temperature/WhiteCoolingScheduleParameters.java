@@ -21,11 +21,9 @@ import org.apache.commons.math3.stat.StatUtils;
 public final class WhiteCoolingScheduleParameters {
 
 	public static ClosedInterval
-	WhiteTemperatureRangeForSA( double [] fitnessTrajectory )
-	{
+	WhiteTemperatureRangeForSA( double [] fitnessTrajectory ) {
 		Double minDifference = null;
-		for( int i=1; i<fitnessTrajectory.length; ++i )
-		{
+		for( int i=1; i<fitnessTrajectory.length; ++i ) {
 			final double delta = Math.abs( fitnessTrajectory[ i ]
 					- fitnessTrajectory[ i - 1 ] );
 			if( minDifference == null || delta < minDifference )
@@ -33,9 +31,7 @@ public final class WhiteCoolingScheduleParameters {
 		}
 
 		final double variance = StatUtils.variance( fitnessTrajectory );
-		return ClosedInterval.create(
-				minDifference,
-				Math.sqrt( variance ) );
+		return ClosedInterval.create(minDifference,Math.sqrt( variance ) );
 	}
 }
 
