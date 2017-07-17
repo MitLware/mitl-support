@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
-    name := "metaxa",
+    name := "MitLware-support",
     version := "1.0",
-    scalaVersion := "2.11.8"
+    scalaVersion := "2.12.0"
   )
 
 libraryDependencies += "org.apache.commons" % "commons-lang3" % "3.5"

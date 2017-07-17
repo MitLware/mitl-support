@@ -1,0 +1,6 @@
+package org.mitlware.support.lang;
+
+public interface Immutable {}
+
+// End ///////////////////////////////////////////////////////////////
+
