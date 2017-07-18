@@ -1,4 +1,4 @@
-package org.mitlware.support.io;
+package org.mitlware.support.util;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
