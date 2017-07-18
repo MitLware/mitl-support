@@ -1,4 +1,4 @@
-package org.mitlware.support.random;
+package org.mitlware.support.util;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.Set;
 
 /**
- * Taken from:
+ * Adapted from:
  * http://eyalsch.wordpress.com/2010/04/01/random-sample/
  */
 

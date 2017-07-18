@@ -10,8 +10,7 @@ import java.util.function.Function;
 
 public final class ProportionalSelectionUtil {
 
-	public static int select( double [] values, Random random )
-	{
+	public static int select( double [] values, Random random ) {
 		final int numSelections = 1;
 		return select( values, numSelections, random ).get( 0 );
 	}
@@ -19,8 +18,7 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	public static List< Integer >
-	select( double [] values, int numSelections, Random random )
-	{
+	select( double [] values, int numSelections, Random random ) {
 		if( values.length == 0 )
 			throw new IllegalArgumentException();
 
@@ -33,8 +31,7 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	public static < T >
-	int select( List< T > values, Function< T, Double > f, Random random )
-	{
+	int select( List< T > values, Function< T, Double > f, Random random ) {
 		final int numSelections = 1;
 		return select( values, numSelections, f, random ).get( 0 );
 	}
@@ -42,8 +39,7 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	public static < T > List< Integer >
-	select( List< T > values, int numSelections, Function< T, Double > f, Random random )
-	{
+	select( List< T > values, int numSelections, Function< T, Double > f, Random random ) {
 		if( values.isEmpty() )
 			throw new IllegalArgumentException();
 
@@ -56,8 +52,7 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	public static double []
-	cumulativeFitness( double [] values )
-	{
+	cumulativeFitness( double [] values ) {
 		if( values.length == 0 )
 			throw new IllegalArgumentException();
 
@@ -65,8 +60,7 @@ public final class ProportionalSelectionUtil {
 
 		double [] cumulativeFitness = new double[ values.length ];
 		cumulativeFitness[ 0 ] = values[ 0 ];
-		for( int i=1; i<cumulativeFitness.length; ++i )
-		{
+		for( int i=1; i<cumulativeFitness.length; ++i ) {
 			final double fitness = values[ i ];
 			if( fitness < 0 )
 				throw new IllegalArgumentException();
@@ -80,10 +74,8 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	static < T > List< Integer >
-	selectImpl( double [] cumulativeFitness, int numSelections, Random random )
-	{
-		if( cumulativeFitness[ cumulativeFitness.length - 1 ] == 0.0 )
-		{
+	selectImpl( double [] cumulativeFitness, int numSelections, Random random )	{
+		if( cumulativeFitness[ cumulativeFitness.length - 1 ] == 0.0 ) {
 			List< Integer > result = new ArrayList< Integer >();
 			for( int i=0; i<numSelections; ++i )
 				result.add( random.nextInt( cumulativeFitness.length ) );
@@ -93,8 +85,7 @@ public final class ProportionalSelectionUtil {
 		///////////////////////////
 
 		List< Integer > result = new ArrayList< Integer >();
-		for( int i=0; i<numSelections; ++i )
-		{
+		for( int i=0; i<numSelections; ++i ) {
 			double randomFitness = random.nextDouble() * cumulativeFitness[ cumulativeFitness.length - 1 ];
 			int index = Arrays.binarySearch( cumulativeFitness, randomFitness );
 			if( index < 0 )
@@ -111,8 +102,7 @@ public final class ProportionalSelectionUtil {
 	///////////////////////////////
 
 	public static < T > double []
-	cumulativeFitness( List< T > values, Function< T, Double > f )
-	{
+	cumulativeFitness( List< T > values, Function< T, Double > f ) {
 		if( values.isEmpty() )
 			throw new IllegalArgumentException();
 
@@ -120,8 +110,7 @@ public final class ProportionalSelectionUtil {
 
 		double [] cumulativeFitness = new double[ values.size() ];
 		cumulativeFitness[ 0 ] = f.apply( values.get( 0 ) );
-		for( int i=1; i<cumulativeFitness.length; ++i )
-		{
+		for( int i=1; i<cumulativeFitness.length; ++i ) {
 			final double fitness = f.apply( values.get( i ) );
 			if( fitness < 0 )
 				throw new IllegalArgumentException();
