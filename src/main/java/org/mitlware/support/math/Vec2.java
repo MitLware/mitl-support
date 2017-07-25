@@ -34,7 +34,7 @@ implements Comparable< Vec2 >, Immutable, PubliclyCloneable< Vec2 > {
 	public double getX() { return x_; }
 	public double getY() { return y_; }
 
-	public double modulus() { return Math.sqrt( x_ * x_ + y_ * y_ ); }
+	public double modulus() { return java.lang.Math.sqrt( x_ * x_ + y_ * y_ ); }
 
 	public double modulusSquared() { return x_ * x_ + y_ * y_; }
 
@@ -59,7 +59,7 @@ implements Comparable< Vec2 >, Immutable, PubliclyCloneable< Vec2 > {
 	///////////////////////////////
 
 	public boolean isUnitVector() {
-		return Utils.compareRelativeDifference( modulusSquared(), 1 );
+		return Math.compareRelativeDifference( modulusSquared(), 1 );
 	}
 
 	public Vec2 toUnitVector() {
@@ -69,9 +69,8 @@ implements Comparable< Vec2 >, Immutable, PubliclyCloneable< Vec2 > {
 
 		double sqrModulus = modulusSquared();
 		double rx = x_, ry = y_;
-		if( sqrModulus != 1 )
-		{
-			double s = 1.0 / Math.sqrt( sqrModulus );
+		if( sqrModulus != 1 ) {
+			double s = 1.0 / java.lang.Math.sqrt( sqrModulus );
 			rx *= s;
 			ry *= s;
 		}
@@ -94,7 +93,7 @@ implements Comparable< Vec2 >, Immutable, PubliclyCloneable< Vec2 > {
 
 		double cosine = h.dotProduct( d );
 		double sine = h.x_ * d.y_ - h.y_ * d.x_;
-		return Math.atan2( sine, cosine );
+		return java.lang.Math.atan2( sine, cosine );
 	}
 
     public boolean isZeroVector() { return x_ == 0 && y_ == 0; }
@@ -104,7 +103,7 @@ implements Comparable< Vec2 >, Immutable, PubliclyCloneable< Vec2 > {
     public static double EuclidianDistance( Vec2 a, Vec2 b ) {
     	final double dx = a.x_ - b.x_;
     	final double dy = a.y_ - b.y_;
-    	return Math.sqrt( ( dx * dx ) + ( dy * dy ) );
+    	return java.lang.Math.sqrt( ( dx * dx ) + ( dy * dy ) );
     }
 
     public static double EuclidianDistanceSquared( Vec2 a, Vec2 b ) {

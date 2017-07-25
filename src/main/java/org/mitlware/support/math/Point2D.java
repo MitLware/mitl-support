@@ -96,7 +96,7 @@ implements Comparable< Point2D >, Immutable, PubliclyCloneable< Point2D > {
 	public static double EuclidianDistance( Point2D a, Point2D b ) {
 		double dx = a.x_ - b.x_;
 		double dy = a.y_ - b.y_;
-		return Math.sqrt( ( dx * dx ) + ( dy * dy ) );
+		return java.lang.Math.sqrt( ( dx * dx ) + ( dy * dy ) );
 	}
 }
 

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.AbstractList;
 
 //////////////////////////////////////////////////////////////////////
 
@@ -100,6 +101,38 @@ public final class MitlCollections {
 		for( int i=0; i<c.size(); ++i )
 			result[ i ] = c.get( i );
 
+		return result;
+	}
+
+	///////////////////////////////
+
+	public static List< Integer > asList( final int[] is ) {             
+		return new AbstractList< Integer >() {
+			public Integer get(int i) { return is[i]; }
+			  public int size() { return is.length; }
+		  };     
+	}
+	
+	public static List< Float > asList( final float [] is ) {             
+		return new AbstractList< Float >() {
+			public Float get(int i) { return is[i]; }
+			  public int size() { return is.length; }
+		  };     
+	} 	
+
+	public static List< Double > asList( final double [] is ) {             
+		return new AbstractList< Double >() {
+			public Double get(int i) { return is[i]; }
+			  public int size() { return is.length; }
+		  };     
+	}
+	
+	///////////////////////////////
+	
+	public static int [] asArray( List< Integer > l ) {
+		int [] result = new int [ l.size() ];
+		for( int i=0; i<l.size(); ++i )
+			result[ i ] = l.get( i );
 		return result;
 	}
 

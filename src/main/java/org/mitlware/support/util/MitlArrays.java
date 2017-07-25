@@ -1,19 +1,54 @@
 package org.mitlware.support.util;
 
-public final class MitlArrays
-{
+public final class MitlArrays {
+
+	public static int min( int [] array ) {
+		if( array.length == 0 )
+			throw new IllegalArgumentException();
+		
+		int min = array[0];
+		for( int i=0; i<array.length; ++i )
+			if( array[i] < min ) 
+				min = array[i];
+		return min;
+	}
+
+	public static int max( int [] array ) {
+		if( array.length == 0 )
+			throw new IllegalArgumentException();
+		
+		int max = array[0];
+		for( int i=0; i<array.length; ++i )
+			if( array[i] > max) 
+				max = array[i];
+		return max;
+	}
+
+	public static int minIndex( int [] array ) {
+		int j = 0;
+		for( int i=1; i<array.length;  ++i )
+			if( array[i] < array[j] )
+				j = i;
+		return j;
+	}
+	
+	public static int maxIndex( int [] array ) {
+		int j = 0;
+		for( int i=1; i<array.length;  ++i )
+			if( array[i] > array[j] )
+				j = i;
+		return j;
+	}
+
 	///////////////////////////////
 
-	public static int lexicographicalCompare( int [] a, int [] b )
-	{
+	public static int lexicographicalCompare( int [] a, int [] b ) {
 	    return lexicographicalCompare( a, 0, a.length, b, 0, b.length );
 	}
 
 	public static int lexicographicalCompare( int [] a, int first1,  int last1,
-            int [] b, int first2, int last2 )
-	{
-		for ( ; first1 != last1 && first2 != last2; ++first1, ++first2 )
-		{
+            int [] b, int first2, int last2 ) {
+		for ( ; first1 != last1 && first2 != last2; ++first1, ++first2 ) {
 			if ( a[ first1 ] < b[ first2 ] )
 				return -1;
 			if ( b[ first2 ] < a[ first1 ] )
@@ -28,15 +63,12 @@ public final class MitlArrays
 
 	///////////////////////////////
 
-	public static int lexicographicalCompare( double [] a, double [] b )
-	{
+	public static int lexicographicalCompare( double [] a, double [] b ) {
 	    return lexicographicalCompare( a, 0, a.length, b, 0, b.length );
 	}
 
-	public static int lexicographicalCompare( double [] a, int first1, int last1, double [] b, int first2, int last2 )
-	{
-	    for( ; first1 != last1 && first2 != last2; ++first1, ++first2 )
-	    {
+	public static int lexicographicalCompare( double [] a, int first1, int last1, double [] b, int first2, int last2 ) {
+	    for( ; first1 != last1 && first2 != last2; ++first1, ++first2 ) {
 	        if( a[ first1 ] < b[ first2 ] )
 	            return -1;
 	        if( b[ first2 ] < a[ first1 ] )
@@ -52,16 +84,13 @@ public final class MitlArrays
 	///////////////////////////////
 
 	public static < T extends Comparable< T > >
-	int lexicographicalCompare( T [] a, T [] b )
-	{
+	int lexicographicalCompare( T [] a, T [] b ) {
 	    return lexicographicalCompare( a, 0, a.length, b, 0, b.length );
 	}
 
 	public static < T extends Comparable< T > >
-	int lexicographicalCompare( T [] a, int first1, int last1, T [] b, int first2, int last2 )
-	{
-	    for( ; first1 != last1 && first2 != last2; ++first1, ++first2 )
-	    {
+	int lexicographicalCompare( T [] a, int first1, int last1, T [] b, int first2, int last2 ) {
+	    for( ; first1 != last1 && first2 != last2; ++first1, ++first2 ) {
 	        if( a[ first1 ].compareTo( b[ first2 ] ) < 0 )
 	            return -1;
 	        if( b[ first2 ].compareTo( a[ first1 ] ) < 0 )
@@ -76,13 +105,10 @@ public final class MitlArrays
 
 	///////////////////////////////
 
-	public static String toCommaString( final double [] a )
-	{
+	public static String toCommaString( final double [] a ) {
 		StringBuffer buffer = new StringBuffer();
-		if( a != null )
-		{
-			for( int i=0; i<a.length; ++i )
-			{
+		if( a != null ) {
+			for( int i=0; i<a.length; ++i ) {
 				buffer.append( a[ i ] );
 				if( i < a.length - 1 )
 					buffer.append( ',' );
@@ -92,13 +118,10 @@ public final class MitlArrays
 	    return new String( buffer );
 	}
 
-	public static <T> String toCommaString( final T[] a )
-	{
+	public static <T> String toCommaString( final T[] a ) {
 		StringBuffer buffer = new StringBuffer();
-		if( a != null )
-		{
-			for( int i=0; i<a.length; ++i )
-			{
+		if( a != null ) {
+			for( int i=0; i<a.length; ++i ) {
 				buffer.append( a[ i ] );
 				if( i < a.length - 1 )
 					buffer.append( ',' );

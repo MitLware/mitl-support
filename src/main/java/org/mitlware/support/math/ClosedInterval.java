@@ -41,12 +41,12 @@ public final class ClosedInterval implements Comparable< ClosedInterval > {
 
 	public static ClosedInterval
 	union(ClosedInterval a, ClosedInterval b ) {
-		return ClosedInterval.create( Math.min(a.lower,b.lower), Math.max(a.upper,b.upper) );
+		return ClosedInterval.create( java.lang.Math.min(a.lower,b.lower), java.lang.Math.max(a.upper,b.upper) );
 	}
 
 	public static ClosedInterval
 	intersection(ClosedInterval a, ClosedInterval b ) {
-		return ClosedInterval.create( Math.max(a.lower,b.lower), Math.min(a.upper,b.upper) );
+		return ClosedInterval.create( java.lang.Math.max(a.lower,b.lower), java.lang.Math.min(a.upper,b.upper) );
 	}
 
 	///////////////////////////////
