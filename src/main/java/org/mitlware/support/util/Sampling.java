@@ -204,9 +204,7 @@ public final class Sampling {
 
 		return result;
 	}
-
-	///////////////////////////////
-
+/*
 	public static void main( String [] args )
 	{
 		Random random = new Random( 0x12345678 );
@@ -219,6 +217,7 @@ public final class Sampling {
 			System.out.println( b );
 		}
 	}
+*/
 }
 
 // End ///////////////////////////////////////////////////////////////

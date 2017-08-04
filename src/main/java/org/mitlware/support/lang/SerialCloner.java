@@ -26,40 +26,33 @@ public class SerialCloner {
 			throw new UncheckedException( e );
 		}
 	}
+/*  
+public static void main( String args[] ) throws Exception { 
 
-	///////////////////////////////
+Vector<StringBuffer> v = new Vector<StringBuffer>();
+v.addElement( new StringBuffer("Hello") );
+Vector<StringBuffer> vClone = SerialCloner.deepClone( v );
 
-	public static void main( String args[] ) throws Exception {
+// Changing the StringBuffer int the cloned vector has no
+// effect on the original StringBuffer object --
+// demonstrating that we have indeed done a deep copy
 
-		Vector<StringBuffer> v = new Vector<StringBuffer>();
-		v.addElement( new StringBuffer("Hello") );
+((StringBuffer)vClone.elementAt(0)).append(" world" );
+StringBuffer sb = (StringBuffer)v.elementAt( 0 );
+System.out.println( sb.toString() );
+sb = (StringBuffer)vClone.elementAt(0);
+System.out.println(sb.toString());
+int array[] = { 1, 2, 3, 4, 5 };
+int arrayClone[] = (int [])SerialCloner.deepClone( array );
 
-		Vector<StringBuffer> vClone = SerialCloner.deepClone( v );
+// Again, changes to an element in the cloned array do not
+// have any effect on the original
 
-		// Changing the StringBuffer int the cloned vector has no
-		// effect on the original StringBuffer object --
-		// demonstrating that we have indeed done a deep copy
+arrayClone[0]++;
+System.out.println(array[0]);
+System.out.println(arrayClone[0]);
+}*/
 
-		((StringBuffer)vClone.elementAt(0)).append(" world" );
-
-		StringBuffer sb = (StringBuffer)v.elementAt( 0 );
-		System.out.println( sb.toString() );
-
-		sb = (StringBuffer)vClone.elementAt(0);
-		System.out.println(sb.toString());
-
-		int array[] = { 1, 2, 3, 4, 5 };
-
-		int arrayClone[] = (int [])SerialCloner.deepClone( array );
-
-		// Again, changes to an element in the cloned array do not
-		// have any effect on the original
-
-		arrayClone[0]++;
-
-		System.out.println(array[0]);
-		System.out.println(arrayClone[0]);
-	}
 }
 
 //////////////////////////////////////////////////////////////////////
