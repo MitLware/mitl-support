@@ -20,7 +20,7 @@ If you want to use an IDE rather than running everything from the command line, 
 
 Once you have this repository downloaded, you can either work directly from the terminal, or using and an IDE. These instructions present how to run the library using IntelliJ and Eclipse.
 
-### IntelliJ
+#### IntelliJ
 
 Before , make sure you have the Scala plugin [downloaded and enabled](https://www.jetbrains.com/help/idea/enabling-and-disabling-plugins.html).
 
@@ -33,7 +33,7 @@ Depending on your operating system, a **Use auto-import** opion might apper. If 
 
 You can alternatively import an existing sbt project, if you already ran sbt on the source files.
 
-### Scala IDE for Eclipse
+#### Scala IDE for Eclipse
 
 Once you download [Scala IDE for eclipse](http://scala-ide.org/download/sdk.html) and have sbt installed, you should be able to run ```sbt eclipse``` in the command line, in the project's root directory (.../mitlproblems). The output of the command should look similar to this:
 
