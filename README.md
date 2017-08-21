@@ -51,7 +51,7 @@ If you are unable to run ```sbt eclipse```, see <https://github.com/typesafehub/
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases](releases). 
 
 ## Authors
 
