@@ -11,7 +11,7 @@ public final class MetropolisHastings {
 			throw new IllegalArgumentException( "Expected non-negative temperature, found:" + temperature );
 
 		if( temperature == 0.0 )
-			return incomingValue > incumbentValue;
+			return isMinimizing ? incomingValue < incumbentValue : incomingValue > incumbentValue;		
 		else {
 			final double delta = isMinimizing ? incomingValue - incumbentValue : incumbentValue - incomingValue;
 			final double acceptProb = 1.0 / ( 1.0 + Math.exp( delta / temperature ) );
