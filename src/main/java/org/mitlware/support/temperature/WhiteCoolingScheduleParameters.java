@@ -22,6 +22,9 @@ public final class WhiteCoolingScheduleParameters {
 
 	public static ClosedInterval
 	WhiteTemperatureRangeForSA( double [] fitnessTrajectory ) {
+		if( fitnessTrajectory.length == 0 )
+			throw new IllegalArgumentException();
+
 		Double minDifference = null;
 		for( int i=1; i<fitnessTrajectory.length; ++i ) {
 			final double delta = Math.abs( fitnessTrajectory[ i ]
@@ -31,7 +34,10 @@ public final class WhiteCoolingScheduleParameters {
 		}
 
 		final double variance = StatUtils.variance( fitnessTrajectory );
-		return ClosedInterval.create(minDifference,Math.sqrt( variance ) );
+		ClosedInterval result = ClosedInterval.create(minDifference,Math.sqrt( variance ) );
+		return result.isEmpty() 
+			?  ClosedInterval.create(fitnessTrajectory[0],fitnessTrajectory[0] + (fitnessTrajectory.length * Double.MIN_VALUE ) ) 
+			: result;
 	}
 }
 
